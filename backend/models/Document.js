@@ -8,7 +8,7 @@ const documentSchema = new mongoose.Schema({
     },
     title: {
         type: String,
-        required: [true, 'Please provide a title for the quiz']
+        required: [true, 'Please provide a title for the quiz'],
         trim: true
     },
     fileName: {
@@ -60,7 +60,7 @@ const documentSchema = new mongoose.Schema({
 });
 
 //Index for faster queries
-documentSchema.index({ userId: 1, uploadData: -1 });
+documentSchema.index({ userId: 1, uploadDate: -1 });
 
 const Document = mongoose.model('Document', documentSchema);
 
